@@ -2,7 +2,6 @@ package com.projects.backend.controller;
 
 import com.projects.backend.dto.CategoryDto;
 import com.projects.backend.dto.custom.ResponseDto;
-import com.projects.backend.model.Product;
 import com.projects.backend.service.CategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
