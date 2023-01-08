@@ -1,6 +1,7 @@
 <template>
   <nav>
-    <router-link to="/admin/category/add">Add Category</router-link>
+    <!-- <router-link to="/admin/category">Category</router-link> |
+    <router-link to="/admin/category/add">Add Category</router-link> -->
   </nav>
   <router-view/>
 </template>
@@ -15,7 +16,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 20px;
 }
 
 nav a {

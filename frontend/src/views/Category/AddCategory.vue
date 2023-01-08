@@ -1,51 +1,12 @@
-<script>
-import axios from 'axios'
-
-export default {
-    data() {
-        return{
-        categoryName: "",
-        description: "",
-        imageUrl: "",
-        };
-    },
-    methods: {
-        addCategory() {
-
-            const BASEURL = "http://localhost:8000";
-
-            const newCategory = {
-                categoryName: this.categoryName,
-                description: this.description,
-                imageUrl: this.imageUrl
-            };
-
-            console.log(newCategory);
-            axios.post(BASEURL + "/category",newCategory)
-            .then((response)=>{
-                console.log(response.data.data);
-                alert(response.data.message);
-            })
-            .catch((err)=>{
-                console.log(err.response.data);
-                alert(err.response.data)
-            })
-
-        }
-    }
-}
-</script>
-
-
 <template>
 
     <div class="container">
         <div class="row col-12">
-            <h1 class="pb-2 b-3">ADD CATEGORY</h1>
+            <h1 class="pb-2 b-3">Add Category</h1>
         </div>
         <div class="row">
             <div class="col-3">
-                
+
             </div>
             <div class="col-6">
 
@@ -72,6 +33,42 @@ export default {
 
 </template>
 
+<script>
+import axios from 'axios'
+
+export default {
+    data() {
+        return {
+            categoryName: "",
+            description: "",
+            imageUrl: "",
+            url:"http://localhost:8000/category",
+        };
+    },
+    methods: {
+        addCategory() {
+
+            const newCategory = {
+                categoryName: this.categoryName,
+                description: this.description,
+                imageUrl: this.imageUrl
+            };
+
+            console.log(newCategory);
+            axios.post(this.url, newCategory)
+                .then((response) => {
+                    console.log(response.data.data);
+                    alert(response.data.message);
+                })
+                .catch((err) => {
+                    console.log(err.response.data);
+                    alert(err.response.data)
+                })
+
+        }
+    }
+}
+</script>
 
 <style scoped>
 
